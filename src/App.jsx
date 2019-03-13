@@ -56,7 +56,7 @@ const CopyExample = () => {
 						// 6. Add input state as a value
 						value={input}
 						rows="15"
-						cols="50"
+						cols="75"
 					/>
 					<br />
 					<button onClick={copyToClipboard}>{copyText}</button>

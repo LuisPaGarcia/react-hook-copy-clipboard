@@ -1,11 +1,8 @@
 const COMPONENT = `
-import React, { useState, useRef } from 'react';
-import './App.css';
-
-const App = () => {
+const CopyExample = () => {
 	// 1. Use input to save the value into the text area
-	const [ input, setInput ] = useState('Example text!');
-	const [ copyText, setcopyText ] = useState('Copy markdown');
+	const [ input, setInput ] = useState(COMPONENT);
+	const [ copyText, setcopyText ] = useState('Copy component');
 
 	// 2. Create a ref using useRef
 	const textAreaRef = useRef(null);
@@ -19,18 +16,21 @@ const App = () => {
 	};
 
 	return (
-		<div class="outer">
-			<div class="middle">
-				<div class="inner">
-					<h1>react copy</h1>
+		<div style={style.outer}>
+			<div style={style.middle}>
+				<div style={style.inner}>
+					<h1>react-hook-copy example</h1>
 
 					<textarea
 						// 4. Add the ref to the text area, source to copy
 						ref={textAreaRef}
 						type="text"
+						// 7. Use the setInput function to set input value
 						onChange={({ target: { value } }) => setInput(value)}
-						// 5. Add input state as a value
+						// 6. Add input state as a value
 						value={input}
+						rows="15"
+						cols="75"
 					/>
 					<br />
 					<button onClick={copyToClipboard}>{copyText}</button>
@@ -40,8 +40,7 @@ const App = () => {
 	);
 };
 
-export default App;
-
+export default CopyExample;
 `;
 
 export { COMPONENT };
